@@ -1,3 +1,5 @@
+//XTAL=22MHZ
+//DS89C420
 ORG 00H
 MOV A, #55H
 AGAIN: MOV P1, A
@@ -5,16 +7,7 @@ ACALL DELAY
 CPL A
 SJMP AGAIN
 ;_________delay subroutine
-/*
-ORG 30H
-DELAY:
-MOV R2, #100
-HERE1: MOV R3, #255
-HERE2: DJNZ R3, HERE2
-       DJNZ R2, HERE1
-	   RET
-	   END
-	   */
+           ORG 30H
 	   DELAY:
 	   MOV R2, #86
 	   HERE1: MOV R1, #255
